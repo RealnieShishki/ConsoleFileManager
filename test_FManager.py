@@ -16,7 +16,7 @@ def author_info():
 
 def test_filenames():
     assert filenames() == ['account.py',
-                           'Console File Manager.py',
+                           'ConsoleFileManager.py',
                            'main.py',
                            'test_FManager.py',
                            'test_python.py',
