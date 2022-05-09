@@ -1,5 +1,4 @@
 def ConsoleFManager():
-
     import os
     import shutil
     import platform
@@ -87,8 +86,6 @@ def ConsoleFManager():
             pass
         else:
             break
-
-
 
 
 ConsoleFManager()
