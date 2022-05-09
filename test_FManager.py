@@ -13,7 +13,7 @@ def author_info():
 
 def test_filenames():
     assert filenames() == ['account.py',
-                            'ConsoleFileManager.py',
+                            'Console File Manager.py',
                             'main.py',
                             'test_FManager.py',
                             'test_python.py',
