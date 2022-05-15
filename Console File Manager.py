@@ -1,5 +1,5 @@
-def ConsoleFManager():
 
+def ConsoleFManager():
     import os
     import shutil
     import platform
@@ -52,6 +52,25 @@ def ConsoleFManager():
         elif choice == '4':
             print('Содержимое рабочей директории: ')
             print(os.listdir())
+            dirs = []
+            files = []
+            os_dir = os.listdir()
+            for i in os_dir:
+                if  os.path.isdir(i) == True:
+                    dirs.append(i)
+                else:
+                    files.append(i)
+            with open('main_dir_info.txt', 'w') as f:
+                f.write('dirs:\n')
+                for i in dirs:
+                    name = i + '\n'
+                    f.write(name)
+            with open('main_file_info.txt', 'w') as f:
+                f.write('files: ')
+                for i in files:
+                    name = i + '\n'
+                    f.write(name)
+            print('Файлы созданы')
             pass
         elif choice == '5':
             for i in os.listdir():
@@ -87,8 +106,6 @@ def ConsoleFManager():
             pass
         else:
             break
-
-
 
 
 ConsoleFManager()
