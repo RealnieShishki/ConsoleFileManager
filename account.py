@@ -10,8 +10,12 @@ def my_account():
         choice = input('Выберите пункт меню: ')
 
         if choice == '1':
-            deposit = int(input('Введите сумму пополнения: '))
-            account += deposit
+            try:
+                deposit = int(input('Введите сумму пополнения: '))
+                account += deposit
+            except ValueError:
+                print('Вы ввели не число!')
+                print('Введите верное число.')
             pass
         elif choice == '2':
             purchase_sum = int(input('Введите сумму покупки: '))

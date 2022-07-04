@@ -25,27 +25,17 @@ def ConsoleFManager():
 
         if choice == '1':
             create_name = input('Введите название новой папки: ')
-            if not os.path.exists(create_name):
-                os.mkdir(create_name)
-                print('Папка успешно создана')
-            else:
-                print('Такаое название уже существует, попробуйте другое: ')
+            os.mkdir(create_name), print('Папка успешно создана') if not os.path.exists(create_name) else print('Такаое название уже существует, попробуйте другое: ')
             pass
         elif choice == '2':
             del_name = input('Введите имя (файла/папки) для удаления: ')
-            if not os.path.isdir(del_name):
-                os.remove(del_name)
-            else:
-                os.rmdir(del_name)
+            os.remove(del_name) if not os.path.isdir(del_name) else os.rmdir(del_name)
             print('Обьект успешно удален!')
             pass
         elif choice == '3':
             copy_name = input('Введите название копируемого обьекта: ')
             new_copy_name = input('Введите новое название: ')
-            if not os.path.isdir(copy_name):
-                shutil.copyfile(copy_name, new_copy_name)
-            else:
-                shutil.copytree(copy_name, new_copy_name)
+            shutil.copyfile(copy_name, new_copy_name) if not os.path.isdir(copy_name) else shutil.copytree(copy_name, new_copy_name)
             print('Копирование успешно!')
             pass
         elif choice == '4':
